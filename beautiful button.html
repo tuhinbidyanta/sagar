@@ -8,8 +8,9 @@
     <style>
         :root{
             --neon:rgb(42, 238, 108);
+            --bg:rgb(28, 26, 26);
         }
-        button{
+        .but{
             position: relative;
             height: 40px;
             font-size: 20px;
@@ -21,13 +22,16 @@
             transition: 2s;
             /* overflow: hidden; */
             border-radius: 5px;
+            
         }
-        button:hover{
-            color: white;
+        .but:hover{
+            color: var(--bg) ;
+            font-weight: 600;
+            text-shadow:0px 0px 4px ;
             box-shadow: inset var(--neon) 0px 0px 20px,var(--neon) 0px 0px 30px;
 
         }
-        button::before{
+        .but::before{
             content: "";
             position:absolute;
             top: 0;
@@ -37,14 +41,14 @@
             height: 100%;
             background-color: var(--neon);
             /* transform: skewX(35deg); */
-            transition: 3s;
+            transition: 1s;
             /* overflow: hidden; */
         }
-        button:hover::before{
-            width: 80%;
-            border-radius: 0 20px 20px 0;
+        .but:hover::before{
+            width: 100%;
+            border-radius: 0 0px 200px 0;
         }
-        button::after{
+        .but::after{
             content: "";
             position: absolute;
             background-color: var(--neon);
@@ -53,11 +57,11 @@
             left: 0;
             width: 100%;
             height: 0%;
-            transition: 1s;
+            transition: 10ms;
             
         }
-        button:hover::after{
-            transform: perspective(1em) rotateX(30deg) scale(1,.5);
+        .but:hover::after{
+            transform: perspective(1em) rotateX(30deg) scale(1,.4);
             filter: blur(1em);
             height: 100%;
 
@@ -66,7 +70,7 @@
 </head>
 <body style="background-color: black;">
     <div style="height: 20%; width: 20%; background-color: black; position: absolute;top:40%; left: 40%;">
-        <button>tuhin
+        <button class="but">tuhin
             
         </button>
     </div>
